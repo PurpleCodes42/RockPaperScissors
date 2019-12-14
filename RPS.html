@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors!</title>
+</head>
+<body>
+  <script>
+        function computerPlay() {
+            var rpsArray = ["rock", "paper", "scissors"];
+            var rand = rpsArray[Math.floor(Math.random()*rpsArray.length)];
+            return rand;
+        }
+
+        function playRPS(playerSelection, computerSelection){
+            console.log(playerSelection + "   "  + computerSelection);
+            if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "scissors" && computerSelection == "paper" || playerSelection == "paper" && computerSelection == "rock" ){
+               return "You win!";
+            }
+            else if (computerSelection == "rock" && playerSelection == "scissors" || computerSelection == "scissors" && playerSelection == "paper" || computerSelection == "paper" && playerSelection == "rock"){
+                return "You lose!";
+            }
+            else if (computerSelection == playerSelection){
+                return "Tie!";
+            }
+
+            else return "Something wrong";
+
+        }
+
+        let playerValue = window.prompt("Choose rock, paper or scissors", "");
+        playerValue = playerValue.toLowerCase();
+
+        console.log(playRPS(playerValue, computerPlay()));
+
+  </script>
+</body>
+</html>
